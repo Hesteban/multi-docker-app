@@ -14,8 +14,8 @@ after_success:
  - docker build -t hesteban/multi-server ./server
  - docker build -t hesteban/multi-worker ./worker
 # Log in to tthe docker CLI
-- echo "$DOCKER_PASSWORD" | docker login -u "$DOCKER_ID" --password-stdin
-- docker push hesteban/multi-client
-- docker push hesteban/multi-nginx
-- docker push hesteban/multi-server
-- docker push hesteban/multi-worker
+ - echo "$DOCKER_PASSWORD" | docker login -u "$DOCKER_ID" --password-stdin
+ - docker push hesteban/multi-client
+ - docker push hesteban/multi-nginx
+ - docker push hesteban/multi-server
+ - docker push hesteban/multi-worker
