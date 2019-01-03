@@ -9,14 +9,12 @@ script:
  - docker run hesteban/multi-docker-app npm test -- --coverage
 
 after_success:
- - docker build hesteban/multi-client ./client 
- - docker build hesteban/multi-nginx ./ningx
- - docker build hesteban/multi-server ./server
- - docker build hesteban/multi-worker ./worker
-
+ - docker build -t hesteban/multi-client ./client 
+ - docker build -t hesteban/multi-nginx ./ningx
+ - docker build -t hesteban/multi-server ./server
+ - docker build -t hesteban/multi-worker ./worker
 # Log in to tthe docker CLI
 - echo "$DOCKER_PASSWORD" | docker login -u "$DOCKER_ID" --password-stdin
-
 - docker push hesteban/multi-client
 - docker push hesteban/multi-nginx
 - docker push hesteban/multi-server
