@@ -10,7 +10,7 @@ script:
 
 after_success:
  - docker build -t hesteban/multi-client ./client 
- - docker build -t hesteban/multi-nginx ./ningx
+ - docker build -t hesteban/multi-nginx ./nginx
  - docker build -t hesteban/multi-server ./server
  - docker build -t hesteban/multi-worker ./worker
 # Log in to tthe docker CLI
